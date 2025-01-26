@@ -5,6 +5,7 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import { useNavigate } from 'react-router-dom';
 import { WP } from '../../app/constants/wp.ts';
 import Box from '@mui/material/Box';
+import NewsCard from './components/NewsCard.tsx';
 
 const MainPage = () => {
   const navigate = useNavigate();
@@ -29,7 +30,7 @@ const MainPage = () => {
             </Typography>
           </div>
         </div>
-        <Box sx={{ backgroundColor: '#ECFFE8' }}>
+        <Box sx={{ backgroundColor: '#ECFFE8', pb: 4 }}>
           <div className="container">
             <Typography
               sx={{
@@ -62,6 +63,23 @@ const MainPage = () => {
             </div>
           </div>
         </Box>
+        <div className="container">
+          <Typography
+            sx={{
+              fontSize: '40px',
+              fontWeight: 700,
+              paddingTop: 2,
+              marginBottom: 2,
+            }}
+          >
+            Last News
+          </Typography>
+          <div className={styles.news__cards}>
+            <NewsCard />
+            <NewsCard />
+            <NewsCard />
+          </div>
+        </div>
       </div>
     </>
   );
