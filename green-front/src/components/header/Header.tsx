@@ -12,21 +12,26 @@ const Header = () => {
         <div className={styles.header__top}>
           <div className="container">
             <div className={styles.header__info}>
-              <PhoneIcon sx={{ fontSize: '20px', marginRight: '10px' }} />
+              <PhoneIcon
+                sx={{
+                  fontSize: { xs: '13px', sm: '15px', md: '20px' },
+                  marginRight: { xs: '4px', sm: '8px', md: '10px' },
+                }}
+              />
               <span>+996 312-54-51-62</span>
               <span className={styles.divider}>|</span>
               <EmailIcon
                 sx={{
-                  fontSize: '20px',
-                  marginRight: '10px',
+                  fontSize: { xs: '13px', sm: '15px', md: '20px' },
+                  marginRight: { xs: '4px', sm: '8px', md: '10px' },
                 }}
               />
               <span>green@kstu.kg</span>
               <span className={styles.divider}>|</span>
               <PlaceIcon
                 sx={{
-                  fontSize: '20px',
-                  marginRight: '10px',
+                  fontSize: { xs: '13px', sm: '15px', md: '20px' },
+                  marginRight: { xs: '3px', sm: '8px', md: '10px' },
                 }}
               />
               <span>пр. Ч. Айтматова 66</span>
