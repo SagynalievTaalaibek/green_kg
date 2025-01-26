@@ -16,11 +16,24 @@ import greenLogo from '../../assets/logo/green_logo.png';
 import { IconButton, Typography } from '@mui/material';
 import { NAVIGATION_LINK } from '../../app/constants/navigation.ts';
 
+import LanguageIcon from '@mui/icons-material/Language';
+
+const settings = ['Русский', 'English', 'Кыргызча'];
+
 const Navigation = () => {
   const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null,
   );
+  const [language, setLanguage] = React.useState<null | HTMLElement>(null);
+
+  const openLanguageMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setLanguage(event.currentTarget);
+  };
+
+  const closeLanguageMenu = () => {
+    setLanguage(null);
+  };
 
   const openMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget);
@@ -34,8 +47,6 @@ const Navigation = () => {
     navigate(`/${address}`);
     handleCloseNavMenu();
   };
-
-  ////////
 
   const [menuState, setMenuState] = React.useState<{
     [key: string]: HTMLElement | null;
@@ -79,6 +90,7 @@ const Navigation = () => {
           onClick={() => navigate('/')}
         />
       </Box>
+
       <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
         <IconButton size="large" onClick={openMenu} color="inherit">
           <MenuIcon />
@@ -127,6 +139,7 @@ const Navigation = () => {
           ))}
         </Menu>
       </Box>
+
       <Box sx={{ margin: 0, display: { xs: 'flex', md: 'none' }, flexGrow: 1 }}>
         <img
           src={greenLogo}
@@ -135,6 +148,13 @@ const Navigation = () => {
           onClick={() => navigate('/')}
         />
       </Box>
+      <IconButton
+        sx={{ display: { xs: 'flex', md: 'none' } }}
+        size="large"
+        onClick={openLanguageMenu}
+      >
+        <LanguageIcon />
+      </IconButton>
       <Box
         sx={{
           flexGrow: 1,
@@ -142,6 +162,13 @@ const Navigation = () => {
           marginLeft: 3,
         }}
       >
+        <Button
+          aria-haspopup="true"
+          sx={{ color: 'black' }}
+          onClick={() => navigate('/')}
+        >
+          Главная
+        </Button>
         {NAVIGATION_LINK.map((page) => (
           <div key={page.id}>
             <Button
@@ -179,6 +206,37 @@ const Navigation = () => {
             </Menu>
           </div>
         ))}
+      </Box>
+      <Box>
+        <IconButton
+          sx={{ display: { xs: 'none', md: 'flex' }, margin: 0, padding: 0 }}
+          onClick={openLanguageMenu}
+        >
+          <LanguageIcon sx={{ fontSize: '35px' }} />
+        </IconButton>
+
+        <Menu
+          sx={{ mt: '45px' }}
+          id="menu-appbar"
+          anchorEl={language}
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'right',
+          }}
+          keepMounted
+          transformOrigin={{
+            vertical: 'top',
+            horizontal: 'right',
+          }}
+          open={Boolean(language)}
+          onClose={closeLanguageMenu}
+        >
+          {settings.map((setting) => (
+            <MenuItem key={setting} onClick={closeLanguageMenu}>
+              <Typography sx={{ textAlign: 'center' }}>{setting}</Typography>
+            </MenuItem>
+          ))}
+        </Menu>
       </Box>
     </div>
   );

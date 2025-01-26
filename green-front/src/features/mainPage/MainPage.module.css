@@ -1,0 +1,68 @@
+.mainPage {
+    margin-top: 130px;
+    background: url("../../assets/back_main.png") no-repeat center center fixed;
+    background-size: cover;
+    padding-bottom: 500px;
+    padding-top: 200px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    font-size: 18px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:nth-child(odd) {
+    background-color: #8ac263; /* Зеленый для нечетных карточек */
+    color: #fff;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card__text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Размер кружка */
+    height: 40px; /* Размер кружка */
+    background-color: #000000; /* Цвет фона кружка */
+    border-radius: 50%; /* Делаем элемент кругом */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+.card__circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Размер кружка */
+    height: 40px; /* Размер кружка */
+    background-color: #000000; /* Цвет фона кружка */
+    border-radius: 50%; /* Делаем элемент кругом */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+.card__number {
+    color: #fff; /* Цвет текста */
+    font-size: 18px; /* Размер шрифта */
+    font-weight: bold; /* Жирный текст */
+}

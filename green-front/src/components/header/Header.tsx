@@ -1,5 +1,4 @@
 import styles from './Header.module.css';
-import { Box } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import PlaceIcon from '@mui/icons-material/Place';
@@ -9,7 +8,7 @@ import Navigation from './Navigation.tsx';
 const Header = () => {
   return (
     <>
-      <Box>
+      <header className={styles.header}>
         <div className={styles.header__top}>
           <div className="container">
             <div className={styles.header__info}>
@@ -38,15 +37,11 @@ const Header = () => {
           <img src={euLogo} alt="Логотип" width={250} />
         </div>
         <div className={'container'}>
-          <div
-            style={{
-              padding: '5px 0',
-            }}
-          >
+          <div className={styles.header__nav}>
             <Navigation />
           </div>
         </div>
-      </Box>
+      </header>
     </>
   );
 };
