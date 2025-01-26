@@ -2,27 +2,23 @@ import { NavLink } from 'react-router-dom';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import Box from '@mui/material/Box';
 import styles from './NewsCard.module.css';
+import { Typography } from '@mui/material';
 
 const NewsCard = () => {
   return (
-    <Box className={styles.newsCard}>
-      <p className={styles.newsCardTitle}>Lorem ipsum dolor sit amet.</p>
-      <div className={styles.rateCardTextBlocks}>
-        <div className={styles.rateCardTextBlock}>
-          <p className={styles.newsCardText}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque,
-            sequi.
-          </p>
-        </div>
-      </div>
-      <div className={styles.lastNewsDateTimeLink}>
-        <div className={styles.dates}>
-          <p className={styles.cardDateText}>
-            <strong>Дата: </strong>
-            26.01.2025
-          </p>
-        </div>
-        <NavLink className={styles.cardBtnLink} to={`news/${''}`}>
+    <Box className={styles.news__card}>
+      <h5 className={styles.news__title}>Lorem ipsum dolor sit amet.</h5>
+      <Typography
+        sx={{ color: '#777', marginBottom: '30px', fontSize: '15px' }}
+      >
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, sequi.
+      </Typography>
+      <div className={styles.card__dates}>
+        <p className={styles.card__dates_text}>
+          <strong>Дата: </strong>
+          26.01.2025
+        </p>
+        <NavLink className={styles.card__btn} to={`news/${''}`}>
           <ArrowOutwardIcon />
         </NavLink>
       </div>

@@ -1,5 +1,4 @@
 import styles from './MainPage.module.css';
-import { Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 import { useNavigate } from 'react-router-dom';
@@ -15,33 +14,16 @@ const MainPage = () => {
       <div style={{ marginBottom: '100px' }}>
         <div className={styles.mainPage}>
           <div className="container">
-            <Typography sx={{ fontSize: '45px', fontWeight: 700, margin: 0 }}>
+            <h5 className={styles.main__title}>
               GREEN AND DIGITAL UNIVERSITIES
-            </Typography>
-            <Typography
-              sx={{ fontSize: '45px', fontWeight: 700, marginTop: 3 }}
-            >
-              FOR SUSTAINABLE DEVELOPMENT
-            </Typography>
-            <Typography
-              sx={{ fontSize: '45px', fontWeight: 700, marginTop: 3 }}
-            >
-              OF KYRGYZSTAN
-            </Typography>
+            </h5>
+            <h5 className={styles.main__title}>FOR SUSTAINABLE DEVELOPMENT</h5>
+            <h5 className={styles.main__title}>OF KYRGYZSTAN</h5>
           </div>
         </div>
         <Box sx={{ backgroundColor: '#ECFFE8', pb: 4 }}>
           <div className="container">
-            <Typography
-              sx={{
-                fontSize: '40px',
-                fontWeight: 700,
-                paddingTop: 2,
-                marginBottom: 2,
-              }}
-            >
-              Work Packages
-            </Typography>
+            <h4 className={styles.section__title}>Work Packages</h4>
             <div className={styles.cards}>
               {WP.map((item) => (
                 <div className={styles.card} key={item.id}>
@@ -64,16 +46,7 @@ const MainPage = () => {
           </div>
         </Box>
         <div className="container">
-          <Typography
-            sx={{
-              fontSize: '40px',
-              fontWeight: 700,
-              paddingTop: 2,
-              marginBottom: 2,
-            }}
-          >
-            Last News
-          </Typography>
+          <h4 className={styles.section__title}>Last News</h4>
           <div className={styles.news__cards}>
             <NewsCard />
             <NewsCard />
