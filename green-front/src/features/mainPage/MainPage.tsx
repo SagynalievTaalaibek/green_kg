@@ -36,7 +36,7 @@ const MainPage = () => {
                   <Button
                     variant="outlined"
                     startIcon={<ArrowOutwardIcon />}
-                    onClick={() => navigate(`/${item.address}`)}
+                    onClick={() => navigate(`/wp/${item.number}`)}
                   >
                     Подробнее
                   </Button>
